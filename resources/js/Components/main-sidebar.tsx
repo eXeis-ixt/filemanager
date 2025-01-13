@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from "react"
-import { Home, Settings, Users, LayoutDashboard } from 'lucide-react'
+import { Home, Settings, Users, LayoutDashboard, FileAxis3DIcon } from 'lucide-react'
 
 import {
   Sidebar,
@@ -22,6 +22,7 @@ export function MainSidebar() {
     { icon: LayoutDashboard, label: "Dashboard", href: route('file.index') },
     { icon: Users, label: "Users", href: "#" },
     { icon: Settings, label: "Settings", href: "#" },
+    { icon: FileAxis3DIcon, label: "File Demo", href: (route('file.demo')) },
   ]
 
   return (

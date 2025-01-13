@@ -1,19 +1,13 @@
 <?php
 
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+Route::get('/', [HomeController::class,'index'])->name('home');
 
 
 
@@ -30,5 +24,6 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
 Route::get('/app/dashboard', [FileController::class,'index'])->name('file.index');
 });
+Route::get('/app/demo', [FileController::class,'demo'])->name('file.demo');
 
 require __DIR__.'/auth.php';
