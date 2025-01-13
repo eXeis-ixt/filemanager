@@ -23,6 +23,8 @@ function Hero() {
 
   return (
     <div className="w-full">
+        <div className=' relative'>
+            <div className="absolute top-1/2 left-1/2 -z-10 gradient w-3/4 -translate-x-1/2 h-3/4 -translate-y-1/2 inset-0 blur-[10rem]"></div>
       <div className="container mx-auto">
         <div className="flex gap-8 py-20 lg:py-20 items-center justify-center flex-col">
           <div>
@@ -74,6 +76,7 @@ function Hero() {
             </Button>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
